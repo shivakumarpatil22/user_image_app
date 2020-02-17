@@ -1,0 +1,11 @@
+<p><%= notice %></p>
+<p> First Name: <%=@user.first_name %></p>
+<p> Last Name: <%=@user.last_name %></p>
+<p> Email: <%=@user.email %></p>
+
+<% if @user.image.attached? %>
+  <%= image_tag(@user.image, :size => '260x180') %>
+<%end%><br></br>
+
+
+<%= link_to 'Back to User List', users_path, class: "btn btn-primary"%>
