@@ -1,9 +1,14 @@
 <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-  <form class="form-inline" action="/action_page.php">
-    <input class="form-control mr-sm-2" type="text" placeholder="Search">
-    <button class="btn btn-success" type="submit">Search</button>
-  </form>
+  <%= form_tag(users_path method: :get) do %>
+    <%= text_field_tag "search" %>
+     <%= button_tag "Search", :class=> "btn btn-success" %>
+  <% end %>
 </nav>
 <br>
 
+
+
+<ul class="pagination justify-content-end">
+<%= will_paginate @user, renderer: WillPaginate::ActionView::BootstrapLinkRenderer %>
+</ul>
 <%= render 'list' %>

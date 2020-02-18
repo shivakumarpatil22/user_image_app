@@ -16,7 +16,7 @@ class UsersController < ApplicationController
   end
 
   def search
-    @User = User.by_user_name(params[:search_text])
+    @user = User.by_user_name(params[:search])
   end
 
   def create

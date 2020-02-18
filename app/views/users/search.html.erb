@@ -1,10 +1,8 @@
-<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-  <form class="form-inline" action="/action_page.php">
-    <input class="form-control mr-sm-2" type="text" placeholder="Search">
-    <button class="btn btn-success" type="submit">Search</button>
-  </form>
-</nav>
-<br>
+<%= form_tag(search_path method: :get) do %>
+  <%= text_field_tag "search" %>
+  <%= button_tag "Search", :class=> "btn btn-success" %>
+<% end %>
+
 
 <table class='table'>
   <thead>
