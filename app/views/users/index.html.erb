@@ -1,14 +1,1 @@
-<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-  <%= form_tag(users_path method: :get) do %>
-    <%= text_field_tag "search" %>
-     <%= button_tag "Search", :class=> "btn btn-success" %>
-  <% end %>
-</nav>
-<br>
-
-
-
-<ul class="pagination justify-content-end">
-<%= will_paginate @user, renderer: WillPaginate::ActionView::BootstrapLinkRenderer %>
-</ul>
 <%= render 'list' %>

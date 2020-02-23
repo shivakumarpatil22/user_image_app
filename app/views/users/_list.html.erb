@@ -22,3 +22,11 @@
     <% end %>
   </tbody>
 </table>
+
+<ul class="pagination justify-content-end">
+<%= will_paginate @users, renderer: WillPaginate::ActionView::BootstrapLinkRenderer %>
+</ul>
+
+<% if @users.empty? %>
+<p> user not found </p>
+<% end %>

@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
   def new
-    @users = User.new
+    @user = User.new
   end
 
   def edit
@@ -16,7 +16,7 @@ class UsersController < ApplicationController
   end
 
   def search
-    @user = User.by_user_name(params[:search])
+    @users = User.by_user_name(params[:search])
   end
 
   def create
@@ -55,6 +55,6 @@ class UsersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-      params.require(:user).permit(:first_name,:last_name,:email,:image)
+      return params.require(:user).permit(:first_name,:last_name,:email,:image) if params.has_key?(:user)
     end
   end

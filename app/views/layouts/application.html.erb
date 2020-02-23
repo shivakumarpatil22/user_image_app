@@ -25,13 +25,13 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 
-<!-- <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-  <form class="form-inline" action="/action_page.php">
-    <input class="form-control mr-sm-2" type="text" placeholder="Search">
-    <button class="btn btn-success" type="submit">Search</button>
-  </form>
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+  <%= form_with(url:"/search", method: "get") do %>
+    <%= text_field_tag "search" %>
+     <%= button_tag "Search", :class=> "btn btn-success" %>
+  <% end %>
 </nav>
-<br> -->
+
 
 </head>
 <body>
